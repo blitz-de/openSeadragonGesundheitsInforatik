@@ -1,0 +1,762 @@
+/**********************************/
+/********** General CSS ***********/
+/**********************************/
+body {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    background: #ffffff;
+}
+
+a {
+    color: #FF6F61;
+    transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #000000;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 15px 0;
+    color: #000000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px 0;
+    padding: 0;
+    color: #000000;
+    font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: #63c29c;
+    color: #ffffff;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    border-radius: 4px;
+    z-index: 11;
+}
+
+.back-to-top:hover {
+    background: #000000;
+}
+
+.back-to-top i {
+    padding-top: 9px;
+    color: #ffffff;
+}
+
+/**********************************/
+/*********** Top Bar CSS **********/
+/**********************************/
+.top-bar {
+    padding: 2px 0;
+    background: #000000;
+}
+
+/*text color in top bar*/
+.top-bar .tb-contact p {
+    display: inline-block;
+    margin: 0;
+    color: #63c29c;
+    font-size: 14px;
+}
+
+.top-bar .tb-contact p i {
+    margin-right: 6px;
+}
+
+.top-bar .tb-contact p:first-child {
+    margin-right: 15px;
+}
+
+.top-bar .tb-menu {
+    font-size: 0;
+    text-align: right;
+}
+
+/*Text Color of "About / Privacy Terms /Contact" on top bar */
+.top-bar .tb-menu a {
+    color: #63c29c;
+    font-size: 14px;
+    margin: 0 8px;
+}
+
+/* Hover: is used to select elements that I hover with my cursor or mouse over.  */
+.top-bar .tb-menu a:hover {
+    color: #ffffff;
+}
+
+/* last-child: Specify a background color for the <a> element that is the last child of its parent
+For example: <body> <a> blabla</a> <a> 2nd line </a> <a> 3rd Line</a> </body> --> the background of <a> 3rd lined></a> will be colored
+in our case the margin-right has the value 0*/
+.top-bar .tb-menu a:last-child {
+    margin-right: 0;
+}
+/*::after: Insert some text after the content of each <a> element */
+.top-bar .tb-menu a::after {
+    position: absolute;
+    content: "/";
+    margin: 1px 0 0 6px;
+    color: #FF6F61;
+    font-size: 14px;
+}
+
+.top-bar .tb-menu a:last-child::after {
+    display: none;
+}
+
+/* Change the text-alignment of the top-bar tb-contact etc elements to center"
+The @media rule is used in media queries to apply different styles for different media types/devices
+Media queries can be used to check many things, such as:
+1) width and height of the viewport
+2) width and height of the device
+3) orientation (is the tablet/phone in landscape or portrait mode?)
+4) resolution*/
+@media (max-width: 768px) {
+    .top-bar .tb-contact,
+    .top-bar .tb-menu {
+        text-align: center;
+    }
+}
+
+/**********************************/
+/*********** Brand CSS ************/
+/**********************************/
+.brand {
+    margin: 15px 0;
+    background: #00000;
+}
+
+.brand .b-logo {
+    text-align: left;
+    overflow: hidden;
+    margin: -10px 0;
+}
+
+.brand .b-logo a img {
+    max-width: 100%;
+    max-height: 100px;
+}
+
+/* Search field */
+
+.brand .b-search {
+    width: 100%;
+}
+
+.brand .b-search input[type=text] {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    color: #666666;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.brand .b-search input[type=text]:focus {
+    border-color: #63c29c;
+}
+
+.brand .b-search button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 15px;
+    border: none;
+    background: none;
+    color: #63c29c;
+    border-radius: 0 4px 4px 0;
+}
+
+.brand .b-search button:hover {
+    background: #63c29c;
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    .brand {
+        max-height: 90px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .brand .b-logo,
+    .brand .b-search {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .brand .b-search {
+        margin-bottom: 0;
+    }
+}
+
+
+/**********************************/
+/*********** Nav Bar CSS **********/
+/**********************************/
+.nav-bar {
+    position: relative;
+}
+
+.nav-bar.nav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    z-index: 999;
+}
+
+.nav-bar .navbar {
+    height: 100%;
+    padding: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    padding: 10px 10px 8px 10px;
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    border-bottom: 2px solid #000000;
+    transition: none;
+}
+
+/* THhe color of the navbar at the top of the page where HOME AND CONTACT US ARE AT */
+@media (min-width: 768px) {
+    .nav-bar,
+    .nav-bar .navbar {
+        background: #63c29c !important;
+    }
+
+    .nav-bar .navbar-brand {
+        display: none;
+    }
+
+    .nav-bar a.nav-link {
+        padding: 8px 15px;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+}
+
+/*Dropdown Menu which staands besides HOME */
+.nav-bar .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #f8f9fa;
+}
+@media (max-width: 768px) {
+    .nav-bar,
+    .nav-bar .navbar {
+        padding: 3px 0;
+        background: #63c29c !important;
+    }
+
+    .nav-bar a.nav-link {
+
+        padding: 5px;
+    }
+
+    .nav-bar .dropdown-menu {
+        box-shadow: none;
+    }
+
+    .nav-bar .social {
+        display: none;
+    }
+}
+
+.nav-bar .social {
+    font-size: 0;
+    overflow: hidden;
+}
+
+/* The social media icons on the navigation bar */
+.nav-bar .social a {
+    display: inline-block;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 3px 0;
+    text-align: center;
+    font-size: 14px;
+    background: #63c29c;
+    border: 1px solid #ff6f61;
+    border-radius: 4px;
+}
+
+.nav-bar .social a:hover {
+    background: #ffffff;
+     font-weight: bold
+    border: 1px solid #ffffff;
+}
+
+.nav-bar .social a i {
+    color: #ffffff;
+}
+
+.nav-bar .social a:hover i {
+    color: #FF6F61;
+}
+
+
+/**********************************/
+/********** Top Serien CSS **********/
+/**********************************/
+.top-series {
+    position: relative;
+    width: 100%;
+    padding: 30px 0 0 0;
+}
+
+.top-series .tn-img {
+    position: relative;
+    margin: 30px 40px 20px 10px;
+    overflow: hidden;
+}
+
+.top-series .tn-img img {
+    width: 100%;
+}
+
+.top-series .tn-img:hover img {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.top-series .tn-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px 10px 15px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
+    display: flex;
+    align-items: flex-end;
+}
+
+.top-series .tn-title a {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    transition: .3s;
+}
+
+.top-series .tn-left .tn-title a {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.top-series .tn-title a:hover {
+    color: #63c29c;
+}
+
+.top-series .tn-left {
+    margin-bottom: 30px;
+}
+
+.top-series .tn-right {
+    margin-bottom: 60px;
+    padding: 0 30px;
+}
+
+.top-series .tn-right .col-md-6 {
+    padding: 0;
+}
+
+.top-series .slick-prev,
+.top-series .slick-next {
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+    transition: .5s;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 4px;
+}
+
+.top-series .slick-prev {
+    left: 30px;
+}
+
+.top-series .slick-next {
+    right: 30px;
+}
+
+.top-series .slick-prev:hover,
+.top-series .slick-prev:focus,
+.top-series .slick-next:hover,
+.top-series .slick-next:focus {
+    color: #ffffff;
+    background: #63c29c;
+}
+
+.top-series .slick-prev::before,
+.top-series .slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.top-series .slick-prev::before {
+    content: "\f104";
+}
+
+.top-series .slick-next::before {
+    content: "\f105";
+}
+
+/**********************************/
+/********* Breadcrumb CSS *********/
+/**********************************/
+.breadcrumb-wrap {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+}
+
+.breadcrumb-wrap .breadcrumb {
+    margin: 25px 0 0 0;
+    padding: 0;
+    background: none;
+}
+
+.breadcrumb-wrap .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: #353535;
+}
+
+.breadcrumb-wrap .breadcrumb .breadcrumb-item.active {
+    color: #353535;
+}
+
+
+/**********************************/
+/*********** Sidebar CSS EXTRAS**********/
+/**********************************/
+.sidebar {
+    position: relative;
+    width: 100%;
+}
+
+.sidebar .sidebar-widget {
+    position: relative;
+    width: 100%;
+    margin-bottom: 45px;
+}
+/*
+Single Page -> In this Category (to the right side of the page) */
+.sidebar .sidebar-widget h2.sw-title {
+    color: #000000;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px double #000000;
+}
+
+
+/* Text besides images is center.. Under "In This Category"*/
+.sidebar .series-list .nl-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+/*size of image under "In This Category"*/
+.sidebar .series-list .nl-item .nl-img img {
+    width: 100px;
+}
+
+/* Positioning the text besides the image under "In This Category" */
+.sidebar .series-list .nl-item .nl-title {
+    padding-left: 15px;
+}
+
+/* Color of the text besides the image under "In This Category" */
+.sidebar .series-list .nl-item .nl-title a {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all .3s;
+}
+
+/**********************************/
+/********** Footer CSS ************/
+/**********************************/
+.footer {
+
+    position: relative;
+    padding: 60px 0 0 0;
+    background: #111111;
+}
+
+.footer .footer-widget {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.footer .footer-widget .title {
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    border-bottom: 3px double #ffffff;
+}
+
+.footer .footer-widget p {
+    color: #ffffff;
+}
+
+.footer .footer-widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer .footer-widget ul li {
+    margin-bottom: 12px;
+}
+
+.footer .footer-widget ul li:last-child {
+    margin-bottom: 0;
+}
+
+.footer .footer-widget ul li a {
+    color: #ffffff;
+    white-space: nowrap;
+    display: block;
+    line-height: 23px;
+}
+
+.footer .footer-widget ul li a::before {
+    content: '\f061';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 5px;
+}
+
+.footer .footer-widget ul li a:hover {
+    padding-left: 10px;
+    color: #FF6F61;
+}
+
+.footer .contact-info p {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.footer .contact-info p i {
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+.footer .social {
+    position: relative;
+    width: 100%;
+}
+
+.footer .social a {
+    display: inline-block;
+    margin: 10px 5px 0 0;
+    width: 35px;
+    height: 35px;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 18px;
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.footer .social a i {
+    color: #111111;
+}
+
+.footer .social a:hover {
+    background: #FF6F61;
+}
+
+.footer .social a:hover i {
+    color: #ffffff;
+}
+
+.footer .newsletter {
+    position: relative;
+    width: 100%;
+}
+
+.footer .newsletter form {
+    position: relative;
+    width: 100%;
+}
+
+.footer .newsletter input {
+    width: 100%;
+    height: 35px;
+    padding: 0 15px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+
+.footer .newsletter .btn {
+    position: absolute;
+    width: 80px;
+    height: 35px;
+    top: 0;
+    right: 0;
+    padding: 0 15px;
+    border: none;
+    background: #111111;
+    color: #ffffff;
+    font-size: 14px;
+    border: 1px solid #ffffff;
+    border-radius: 0 4px 4px 0;
+}
+
+.footer .newsletter .btn:hover {
+    background: #FF6F61;
+}
+
+.footer .newsletter input:focus,
+.footer .newsletter .btn:focus {
+    box-shadow: none;
+}
+
+
+/**********************************/
+/******** Footer Menu CSS *********/
+/**********************************/
+.footer-menu {
+    position: relative;
+    background: #111111;
+}
+
+.footer-menu .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 15px 0;
+    border-top: 1px solid #000000;
+}
+
+.footer-menu .f-menu {
+    font-size: 0;
+    text-align: center;
+}
+
+.footer-menu .f-menu a {
+    color: #ffffff;
+    font-size: 14px;
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid #ffffff;
+}
+
+.footer-menu .f-menu a:hover {
+    color: #63c29c;
+}
+
+.footer-menu .f-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+
+/**********************************/
+/******** Footer Bottom CSS *******/
+/**********************************/
+.footer-bottom {
+    position: relative;
+    padding: 25px 0;
+    background: #000000;
+}
+
+.footer-bottom .copyright {
+    text-align: left;
+}
+
+.footer-bottom .template-by {
+    text-align: right;
+}
+
+.footer-bottom .copyright p,
+.footer-bottom .template-by p {
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer-bottom .copyright p a,
+.footer-bottom .template-by p a {
+    font-weight: 600;
+}
+
+.footer-bottom .copyright p a:hover,
+.footer-bottom .template-by p a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768.98px) {
+    .footer-bottom .copyright,
+    .footer-bottom .template-by {
+        text-align: center;
+    }
+}
+
+/**********************************/
+/******* OpenSeadragon CSS ********/
+/**********************************/
+.openseadragon1 {
+    width: 600px;
+    height: 600px;
+    /* Center vertically and horizontally */
+    position: absolute;
+    margin: 20px 250px 250px 250px; /*margin-top margin-right margin-bottom margin-left*/
+}
+
+h4 {
+    text-align:center;
+    font-size:30px;
+    font-style: oblique;
+    margin: 20px;
+}
